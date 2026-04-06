@@ -35,15 +35,15 @@ android {
     packagingOptions {
         resources {
             excludes += [
-                'META-INF/NOTICE',
-                'META-INF/LICENSE',
-                'META-INF/NOTICE.txt',
-                'META-INF/LICENSE.txt',
-                'META-INF/DEPENDENCIES',
-                'META-INF/*.kotlin_module',
-                'lib/x86_64/darwin/libscrypt.dylib',
-                'lib/x86_64/freebsd/libscrypt.so',
-                'lib/x86_64/linux/libscrypt.so'
+                "META-INF/NOTICE",
+                "META-INF/LICENSE",
+                "META-INF/NOTICE.txt",
+                "META-INF/LICENSE.txt",
+                "META-INF/DEPENDENCIES",
+                "META-INF/*.kotlin_module",
+                "lib/x86_64/darwin/libscrypt.dylib",
+                "lib/x86_64/freebsd/libscrypt.so",
+                "lib/x86_64/linux/libscrypt.so"
             ]
         }
     }
@@ -51,16 +51,19 @@ android {
 
 configurations.all {
     resolutionStrategy {
-        force 'com.google.protobuf:protobuf-java:3.21.12'
+        force "com.google.protobuf:protobuf-java:3.21.12"
     }
-    exclude group: 'com.google.protobuf', module: 'protobuf-javalite'
+    exclude group: "com.google.protobuf", module: "protobuf-javalite"
+    exclude group: "org.slf4j", module: "slf4j-jdk14"
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.multidex:multidex:2.0.1'
-
-    implementation('org.bitcoinj:bitcoinj-core
+    implementation "androidx.core:core-ktx:1.12.0"
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "com.google.android.material:material:1.10.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation "org.bitcoinj:bitcoinj-core:0.16.2"
+    implementation "com.google.protobuf:protobuf-java:3.21.12"
+    implementation "org.slf4j:slf4j-nop:1.7.36"
+}
