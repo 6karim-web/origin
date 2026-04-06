@@ -1,0 +1,7 @@
+-keep class org.bitcoinj.** { *; }
+-keep class com.google.protobuf.** { *; }
+-dontwarn org.bitcoinj.**
+-dontwarn com.google.protobuf.**
+-dontwarn org.slf4j.**
+-keep class org.spongycastle.** { *; }
+-dontwarn org.spongycastle.**
