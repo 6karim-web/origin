@@ -49,6 +49,13 @@ android {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force 'com.google.protobuf:protobuf-java:3.21.12'
+    }
+    exclude group: 'com.google.protobuf', module: 'protobuf-javalite'
+}
+
 dependencies {
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
@@ -56,10 +63,4 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.multidex:multidex:2.0.1'
 
-    implementation('org.bitcoinj:bitcoinj-core:0.16.2') {
-        exclude group: 'com.google.protobuf', module: 'protobuf-java'
-        exclude group: 'org.slf4j', module: 'slf4j-jdk14'
-    }
-    implementation 'com.google.protobuf:protobuf-java:3.21.12'
-    implementation 'org.slf4j:slf4j-nop:1.7.36'
-}
+    implementation('org.bitcoinj:bitcoinj-core
